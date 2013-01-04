@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130102100610) do
+ActiveRecord::Schema.define(:version => 20130104081652) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",      :limit => 25
@@ -40,8 +40,9 @@ ActiveRecord::Schema.define(:version => 20130102100610) do
 
   create_table "projects", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "Description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "section_edits", :force => true do |t|
@@ -70,12 +71,15 @@ ActiveRecord::Schema.define(:version => 20130102100610) do
   end
 
   create_table "tasks", :force => true do |t|
+    t.integer  "project_id"
     t.string   "name"
-    t.date     "start date"
-    t.date     "end date"
+    t.date     "start_date"
+    t.date     "end_date"
     t.string   "status"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "tasks", ["project_id"], :name => "index_tasks_on_project_id"
 
 end
