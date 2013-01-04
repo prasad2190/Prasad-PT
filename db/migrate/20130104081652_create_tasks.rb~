@@ -8,6 +8,6 @@ class CreateTasks < ActiveRecord::Migration
     t.string "status"
     t.timestamps
     end
-    add_index("tasks","project_id")
+    add_index("tasks","project_id") 
   end
 end

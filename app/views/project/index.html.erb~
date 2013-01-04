@@ -1,0 +1,8 @@
+<h1>Project#new</h1>
+<p>Hello world!</p>
+ <form action="projects/create" method="post">
+<input type="text" name="name" />
+<input type="text" name="Description" />
+<input type="submit" name="commit" value="Create Project">
+</form>
+
